@@ -1,0 +1,1 @@
+import{w as e}from"./chunk-OIYGIGL5-ClTiR4dw.js";import{j as t}from"./jsx-runtime-D_zvdyIk.js";const n=e(function(){return t.jsx("div",{className:"flex flex-col items-center justify-center h-screen",children:t.jsx("h1",{className:"text-4xl font-bold",children:"Hi, i'm the about page"})})});export{n as default};
