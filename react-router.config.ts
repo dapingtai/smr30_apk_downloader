@@ -2,6 +2,8 @@ import type { Config } from "@react-router/dev/config";
 import { config as loadEnv } from "dotenv";
 
 loadEnv({ path: `.env.${process.env.NODE_ENV}` });
+console.info('Now env:', process.env.NODE_ENV);
+console.info('Now base url:', process.env.VITE_BASE_URL);
 
 export default {
   // Config options...
