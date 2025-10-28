@@ -1,7 +1,13 @@
-export const HeroSection = () => {
+export const HeroSection = ({ version, downloadUrl }: { version: String; downloadUrl: String }) => {
 	const handleDownload = () => {
 		// TODO: Implement download functionality
 		console.log('Downloading latest version...');
+		const link = document.createElement('a');
+		link.href = downloadUrl as string;
+		link.download = `smr30-${version}.apk`;
+		document.body.appendChild(link);
+		link.click();
+		document.body.removeChild(link);
 	};
 
 	return (
@@ -11,12 +17,12 @@ export const HeroSection = () => {
 					Robot Control Center APK
 				</h1>
 				<p className='text-base font-normal leading-relaxed text-[#9DB0B9]'>
-					Get the latest software for your service robot. Current Stable Version: v2.1.0
+					Get the latest software for your service robot. Current Stable Version: {version}
 				</p>
 			</div>
 			<button
 				onClick={handleDownload}
-				className='px-5 h-12 bg-[#13A4EC] rounded-lg hover:bg-[#13A4EC]/90 transition-colors shadow-[0_0_5px_2px_rgba(19,164,236,0.2),0_0_15px_5px_rgba(19,164,236,0.3)]'
+				className='cursor-pointer px-5 h-12 bg-[#13A4EC] rounded-lg hover:bg-[#13A4EC]/90 transition-colors shadow-[0_0_5px_2px_rgba(19,164,236,0.2),0_0_15px_5px_rgba(19,164,236,0.3)]'
 			>
 				<span className='text-white text-base font-bold tracking-[1.5%] leading-relaxed'>
 					Download Latest Version

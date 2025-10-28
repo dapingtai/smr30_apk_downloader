@@ -1,14 +1,31 @@
 import { useState, useEffect, useRef } from 'react';
+import type { VersionId, VersionData } from '../types/version';
 
-export const VersionSelector = () => {
+interface VersionSelectorProps {
+	versions: VersionData[];
+	selectedVersionId: VersionId;
+	onVersionChange: (versionId: VersionId) => void;
+}
+
+export const VersionSelector = ({
+	versions,
+	selectedVersionId,
+	onVersionChange,
+}: VersionSelectorProps) => {
 	const [isOpen, setIsOpen] = useState(false);
-	const [selectedVersion, setSelectedVersion] = useState('v2.1.0 (Latest Stable)');
 	const dropdownRef = useRef<HTMLDivElement>(null);
 
-	const versions = ['v2.1.0 (Latest Stable)', 'v2.0.0', 'v1.9.5'];
+	const selectedVersion = versions.find((v) => v.id === selectedVersionId) || versions[0];
+	const versionLabels = versions.map((v) => ({ id: v.id, label: v.label }));
 
 	const handleDownload = () => {
-		console.log(`Downloading ${selectedVersion}...`);
+		console.log(`Downloading ${selectedVersion.id}...`);
+		const link = document.createElement('a');
+		link.href = selectedVersion.downloadUrl as string;
+		link.download = `smr30-${selectedVersion.id}.apk`;
+		document.body.appendChild(link);
+		link.click();
+		document.body.removeChild(link);
 	};
 
 	// Close dropdown when clicking outside
@@ -50,7 +67,7 @@ export const VersionSelector = () => {
 						onClick={() => setIsOpen(!isOpen)}
 						className='w-full h-14 px-4 py-4 pr-9 flex items-center justify-between bg-[#1C2327] border border-[#3B4B54] rounded-lg hover:border-[#4B5A64] transition-colors'
 					>
-						<span className='text-base font-normal text-white'>{selectedVersion}</span>
+						<span className='text-base font-normal text-white'>{selectedVersion.label}</span>
 						<svg
 							width='24'
 							height='28'
@@ -71,17 +88,17 @@ export const VersionSelector = () => {
 
 					{isOpen && (
 						<div className='absolute z-50 w-full mt-1 bg-[#1C2327] border border-[#3B4B54] rounded-lg shadow-lg'>
-							{versions.map((version) => (
+							{versionLabels.map((version) => (
 								<button
-									key={version}
+									key={version.id}
 									type='button'
 									onClick={() => {
-										setSelectedVersion(version);
+										onVersionChange(version.id);
 										setIsOpen(false);
 									}}
 									className='w-full px-4 py-3 text-left text-base font-normal text-white hover:bg-[#2A3037] transition-colors first:rounded-t-lg last:rounded-b-lg'
 								>
-									{version}
+									{version.label}
 								</button>
 							))}
 						</div>
@@ -91,10 +108,10 @@ export const VersionSelector = () => {
 
 			<button
 				onClick={handleDownload}
-				className='w-full h-12 px-5 bg-primary rounded-lg hover:bg-[#2F3D45] transition-colors'
+				className='w-full h-12 px-5 bg-primary rounded-lg hover:bg-[#2F3D45] transition-colors cursor-pointer'
 			>
 				<span className='text-white text-base font-bold tracking-[1.5%] leading-relaxed'>
-					Download {selectedVersion.split(' ')[0]}
+					Download {selectedVersion.id}
 				</span>
 			</button>
 		</div>

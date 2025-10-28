@@ -1,0 +1,156 @@
+{
+    "versions": [
+        {
+            "id": "v3.0.3.20250924",
+            "label": "v3.0.3.20250924 (Latest Stable)",
+            "isLatest": true,
+            "downloadUrl": "https://raw.githubusercontent.com/dapingtai/smr30_apk_downloader/main/apk/deligo_com.farobot.dabai_v3.0.3-20250924.apk",
+            "releaseNotes": {
+                "title": "Version 3.0.3-QA Release Notes",
+                "notes": [
+                    {
+                        "type": "feature",
+                        "text": "Add power control in Advanced Settings"
+                    },
+                    {
+                        "type": "bug-fix",
+                        "text": "Changed the fasting instruction for blood tests from 膽固醇 to 三酸甘油脂 in both data.json and spa.js files for accuracy"
+                    }
+                ]
+            },
+            "requirements": [
+                "Android 5.1.1",
+                "Screen 1024 * 600 tablet",
+                "Wi-Fi connection required for initial setup",
+                "Memory 4.X GB",
+                "Os arm64"
+            ],
+            "instructions": [
+                "Download the APK file",
+                "Remove the old version of the app",
+                "Install the new version of the app by apk installer",
+                "Launch the app and configure your robot connection"
+            ]
+        },
+        {
+            "id": "v2.1.0",
+            "label": "v2.1.0",
+            "isLatest": true,
+            "downloadUrl": "https://github.com/your-username/your-repo/releases/download/v2.1.0/app-v2.1.0.apk",
+            "releaseNotes": {
+                "title": "Version 2.1.0 Release Notes",
+                "notes": [
+                    {
+                        "type": "feature",
+                        "text": "Introduced advanced obstacle avoidance algorithm for smoother navigation in complex environments."
+                    },
+                    {
+                        "type": "improvement",
+                        "text": "Optimized battery consumption by 15% during standby mode."
+                    },
+                    {
+                        "type": "bug-fix",
+                        "text": "Resolved an issue where the robot would occasionally fail to connect to secured Wi-Fi networks."
+                    },
+                    {
+                        "type": "improvement",
+                        "text": "Enhanced UI responsiveness in the remote control interface."
+                    }
+                ]
+            },
+            "requirements": [
+                "Android 8.0 (API level 26) or higher",
+                "Minimum 2GB RAM",
+                "Wi-Fi connection required for initial setup",
+                "Bluetooth 4.0 or higher"
+            ],
+            "instructions": [
+                "Download the APK file",
+                "Enable \"Install from Unknown Sources\" in your device settings",
+                "Open the downloaded APK file",
+                "Follow the on-screen installation instructions",
+                "Launch the app and configure your robot connection"
+            ]
+        },
+        {
+            "id": "v2.0.0",
+            "label": "v2.0.0",
+            "isLatest": false,
+            "downloadUrl": "https://github.com/your-username/your-repo/releases/download/v2.0.0/app-v2.0.0.apk",
+            "releaseNotes": {
+                "title": "Version 2.0.0 Release Notes",
+                "notes": [
+                    {
+                        "type": "feature",
+                        "text": "Complete UI redesign with modern interface."
+                    },
+                    {
+                        "type": "feature",
+                        "text": "Added multi-robot management support."
+                    },
+                    {
+                        "type": "improvement",
+                        "text": "Improved connection stability and faster pairing time."
+                    },
+                    {
+                        "type": "bug-fix",
+                        "text": "Fixed memory leak issue during long operation sessions."
+                    }
+                ]
+            },
+            "requirements": [
+                "Android 8.0 (API level 26) or higher",
+                "Minimum 2GB RAM",
+                "Wi-Fi connection required",
+                "Bluetooth 4.0 or higher"
+            ],
+            "instructions": [
+                "Download the APK file for v2.0.0",
+                "Enable \"Install from Unknown Sources\" in settings",
+                "Open and install the APK",
+                "Follow setup wizard",
+                "Connect to your robot"
+            ]
+        },
+        {
+            "id": "v1.9.5",
+            "label": "v1.9.5",
+            "isLatest": false,
+            "downloadUrl": "https://github.com/your-username/your-repo/releases/download/v1.9.5/app-v1.9.5.apk",
+            "releaseNotes": {
+                "title": "Version 1.9.5 Release Notes",
+                "notes": [
+                    {
+                        "type": "bug-fix",
+                        "text": "Fixed critical security vulnerability in network communication."
+                    },
+                    {
+                        "type": "improvement",
+                        "text": "Reduced app size by 20% through code optimization."
+                    },
+                    {
+                        "type": "bug-fix",
+                        "text": "Fixed crash issue on Android 12 devices."
+                    },
+                    {
+                        "type": "improvement",
+                        "text": "Improved overall performance and response time."
+                    }
+                ]
+            },
+            "requirements": [
+                "Android 7.0 (API level 24) or higher",
+                "Minimum 1.5GB RAM",
+                "Wi-Fi connection",
+                "Bluetooth 3.0 or higher"
+            ],
+            "instructions": [
+                "Download the APK file for v1.9.5",
+                "Enable \"Install from Unknown Sources\"",
+                "Install the APK file",
+                "Complete setup process",
+                "Start using the application"
+            ]
+        }
+    ]
+}

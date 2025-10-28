@@ -1,32 +1,13 @@
 import { useState } from 'react';
+import type { VersionData } from '../types/version';
 
 type TabType = 'release-notes' | 'requirements' | 'instructions';
 
-interface ReleaseNote {
-	type: 'feature' | 'improvement' | 'bug-fix';
-	text: string;
+interface ReleaseNotesProps {
+	selectedVersion: VersionData;
 }
 
-const releaseNotes: ReleaseNote[] = [
-	{
-		type: 'feature',
-		text: 'Introduced advanced obstacle avoidance algorithm for smoother navigation in complex environments.',
-	},
-	{
-		type: 'improvement',
-		text: 'Optimized battery consumption by 15% during standby mode.',
-	},
-	{
-		type: 'bug-fix',
-		text: 'Resolved an issue where the robot would occasionally fail to connect to secured Wi-Fi networks.',
-	},
-	{
-		type: 'improvement',
-		text: 'Enhanced UI responsiveness in the remote control interface.',
-	},
-];
-
-export const ReleaseNotesSection = () => {
+export const ReleaseNotesSection = ({ selectedVersion }: ReleaseNotesProps) => {
 	const [activeTab, setActiveTab] = useState<TabType>('release-notes');
 
 	const tabs = [
@@ -82,15 +63,15 @@ export const ReleaseNotesSection = () => {
 
 			<div className='flex flex-col gap-4'>
 				<h3 className='text-[18px] font-bold leading-tight text-white'>
-					Version 2.1.0 Release Notes
+					{selectedVersion.releaseNotes.title}
 				</h3>
 
 				{activeTab === 'release-notes' && (
 					<div className='flex flex-col gap-3'>
-						{releaseNotes.map((note, index) => (
+						{selectedVersion.releaseNotes.notes.map((note, index) => (
 							<div key={index} className='flex gap-4 w-full'>
 								<span
-									className={`w-24 h-6 px-3 py-1 rounded-full text-xs font-medium ${getBadgeColor(note.type)}`}
+									className={`w-24 h-6 px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap ${getBadgeColor(note.type)}`}
 								>
 									{getBadgeLabel(note.type)}
 								</span>
@@ -103,21 +84,22 @@ export const ReleaseNotesSection = () => {
 				)}
 
 				{activeTab === 'requirements' && (
-					<div className='text-sm font-normal leading-relaxed text-[#9DB0B9]'>
-						<p>• Android 8.0 (API level 26) or higher</p>
-						<p>• Minimum 2GB RAM</p>
-						<p>• Wi-Fi connection required for initial setup</p>
-						<p>• Bluetooth 4.0 or higher</p>
+					<div>
+						{selectedVersion.requirements.map((req, index) => (
+							<p key={index} className='text-sm font-normal leading-relaxed text-[#9DB0B9]'>
+								• {req}
+							</p>
+						))}
 					</div>
 				)}
 
 				{activeTab === 'instructions' && (
 					<div className='text-sm font-normal leading-relaxed text-[#9DB0B9]'>
-						<p>1. Download the APK file</p>
-						<p>2. Enable "Install from Unknown Sources" in your device settings</p>
-						<p>3. Open the downloaded APK file</p>
-						<p>4. Follow the on-screen installation instructions</p>
-						<p>5. Launch the app and configure your robot connection</p>
+						{selectedVersion.instructions.map((instruction, index) => (
+							<p key={index}>
+								{index + 1}. {instruction}
+							</p>
+						))}
 					</div>
 				)}
 			</div>
