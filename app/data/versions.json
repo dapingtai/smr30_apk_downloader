@@ -1,6 +1,34 @@
 {
     "versions": [
         {
+            "id": "v3.0.4.20251105",
+            "label": "v3.0.4.20251105",
+            "isLatest": false,
+            "downloadUrl": "https://raw.githubusercontent.com/dapingtai/smr30_apk_downloader/main/apk/deligo_com.farobot.dabai_v3.0.4-202511051356.apk",
+            "releaseNotes": {
+                "title": "Version 3.0.4-QA Release Notes",
+                "notes": [
+                    {
+                        "type": "improvement",
+                        "text": "Refactor the system status bar"
+                    }
+                ]
+            },
+            "requirements": [
+                "Android 5.1.1",
+                "Screen 1024 * 600 tablet",
+                "Wi-Fi connection required for initial setup",
+                "Memory 4.X GB",
+                "Os arm64"
+            ],
+            "instructions": [
+                "Download the APK file",
+                "Remove the old version of the app",
+                "Install the new version of the app by apk installer",
+                "Launch the app and configure your robot connection"
+            ]
+        },
+        {
             "id": "v3.0.3.20250924",
             "label": "v3.0.3.20250924 (Latest Stable)",
             "isLatest": true,
