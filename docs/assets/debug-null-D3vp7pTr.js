@@ -1,0 +1,1 @@
+import{w as t}from"./chunk-OIYGIGL5-DQIPGKCx.js";function o(){import.meta.url,import("_").catch(()=>1),(async function*(){})().next()}const e=t(function(){return null});export{o as __vite_legacy_guard,e as default};
