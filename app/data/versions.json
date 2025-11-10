@@ -1,8 +1,8 @@
 {
     "versions": [
         {
-            "id": "v3.0.4.20251105",
-            "label": "v3.0.4.20251105",
+            "id": "v3.0.4.20251110",
+            "label": "v3.0.4.20251110",
             "isLatest": false,
             "downloadUrl": "https://raw.githubusercontent.com/dapingtai/smr30_apk_downloader/main/apk/deligo_com.farobot.dabai_v3.0.4-202511101507.apk",
             "releaseNotes": {
