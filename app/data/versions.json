@@ -1,6 +1,38 @@
 {
     "versions": [
         {
+            "id": "v3.0.5.20251216",
+            "label": "v3.0.5.20251216",
+            "isLatest": false,
+            "downloadUrl": "https://raw.githubusercontent.com/dapingtai/smr30_apk_downloader/main/apk/deligo_com.farobot.dabai_vA11-3.0.5-20251216_test.apk",
+            "releaseNotes": {
+                "title": "Version 3.0.5-Android 11",
+                "notes": [
+                    {
+                        "type": "feature",
+                        "text": "Turn signal light"
+                    },
+                    {
+                        "type": "improvement",
+                        "text": "Adjust android security setting"
+                    }
+                ]
+            },
+            "requirements": [
+                "Android 11",
+                "Screen 1024 * 600 tablet",
+                "Wi-Fi connection required for initial setup",
+                "Memory 4.X GB",
+                "Os arm64"
+            ],
+            "instructions": [
+                "Download the APK file",
+                "Remove the old version of the app",
+                "Install the new version of the app by apk installer",
+                "Launch the app and configure your robot connection"
+            ]
+        },
+        {
             "id": "v3.0.4.20251110",
             "label": "v3.0.4.20251110",
             "isLatest": false,
